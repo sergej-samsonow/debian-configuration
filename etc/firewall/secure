@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# general script for iptables and ip6tables
+
+PATH='/sbin'
+if [ -z "$IPT" ]
+then
+    (>&2 echo "IPT variable is't set can't continue exit(1)") 
+    exit 1
+fi
+if [ -z "$LOOPBACK" ]
+then
+    (>&2 echo "LOOPBACK variable is't set can't continue exit(1)") 
+    exit 1
+fi
+
+
+$IPT --flush
+$IPT --policy INPUT   DROP
+$IPT --policy FORWARD DROP
+$IPT --policy OUTPUT  ACCEPT
+
+$IPT --append INPUT --match state --state ESTABLISHED,RELATED --jump ACCEPT
+$IPT --append INPUT --source $LOOPBACK --destination $LOOPBACK \
+    --in-interface lo --jump ACCEPT
+

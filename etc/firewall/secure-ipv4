@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# IPv4 iptables rules adopted from debian documentation
+IPT="/sbin/iptables"
+LOOPBACK="127.0.0.0/8"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/secure"

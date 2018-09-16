@@ -1,0 +1,10 @@
+[Unit]
+Description=Enable firewall
+
+[Service]
+Type=oneshot
+ExecStart=/etc/firewall/secure-ipv4
+ExecStart=/etc/firewall/secure-ipv6
+
+[Install]
+WantedBy=multi-user.target

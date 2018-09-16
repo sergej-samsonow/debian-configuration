@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# IPv6 iptables rules adopted from debian documentation
+IPT="/sbin/ip6tables"
+LOOPBACK="::1/128"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/secure"
