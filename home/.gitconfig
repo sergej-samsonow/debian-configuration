@@ -1,3 +1,5 @@
 [user]
-	name = Sergej Samsonow
-	email = ********@******.***
+    name = Sergej Samsonow
+    email = ****@****.***
+[core]
+    excludesfile = ~/.gitglobalignore

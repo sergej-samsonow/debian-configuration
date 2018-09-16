@@ -1,0 +1,11 @@
+# vim
+*.swp
+*~
+*.bak
+.netrwhist
+
+# java
+target/
+.settings/
+.project
+.classpath
